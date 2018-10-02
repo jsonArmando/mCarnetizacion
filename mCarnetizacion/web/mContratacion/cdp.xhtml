@@ -28,84 +28,87 @@
                                     <p:inputText value="" id="idBusqueda">
                                     </p:inputText>
                                 </p:panelGrid>
+
+                                <p:tab title="Certificado de Disponibilidad Presupuestal">
+                                    <p:panel id="idPanelPrincipal" style="margin:5px 0px 10px  0px;">
+                                        <p:dataTable id="idTableCDP" value="" widgetVar="cdpTable" rows="10"
+                                                     paginator="true" 
+                                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom" style="font-size: 12px;">
+                                            <p:column headerText="Fuente" sortBy="" filterBy="" filterMatchMode="in">
+                                                <f:facet name="filter">
+                                                    <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
+                                                        <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                                        <f:selectItem itemLabel="Gratuidad" itemValue="#{null}" noSelectionOption="true" />
+                                                        <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
+                                                    </p:selectOneMenu>
+                                                </f:facet>
+                                                <h:outputText value="" style="width: 300px;"/>
+                                            </p:column>
+                                            <p:column headerText="Artículo Presupuestal" filterBy="" sortBy="" filterMatchMode="contains">
+                                                <h:outputText value="" style="width: 300px;"/>                                            
+                                            </p:column>
+                                            <p:column headerText="Concepto" sortBy="" filterBy="" filterMatchMode="in">
+                                                <f:facet name="filter">
+                                                    <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
+                                                        <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                                        <f:selectItem itemLabel="Mantenimiento del Establecimiento" itemValue="#{null}" noSelectionOption="true" />
+                                                        <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
+                                                    </p:selectOneMenu>
+                                                </f:facet>
+                                                <h:outputText value="" style="width: 300px;"/>
+                                            </p:column>
+                                            <p:column headerText="Valor" sortBy="" filterBy="" filterMatchMode="startWith">
+                                                <h:outputText value=""/>
+                                            </p:column>
+                                        </p:dataTable>
+                                    </p:panel>
+                                    <p:tab title="Objeto">
+                                        <p:panel id="panelObjeto">
+                                            <p:inputTextarea id="idObjeto" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                             style="width: 900px;" maxlength="2000">
+
+                                            </p:inputTextarea>
+                                            <br/>
+                                            <h:outputText value="Se expide a solicitud"/>
+                                            <br/>
+                                            <h:outputText value="Identifiación: "/>
+                                            <p:inputText id="idIdentificacionExpedicion" required="true" requiredMessage="Escriba el número de Identificación"
+                                                         style="font-size: 12px;">
+
+                                            </p:inputText>
+                                            <h:outputText value="Nombre: "/>
+                                            <p:inputText id="idNombreExpedición" required="true" requiredMessage="Se expide a solicitud del señor: " 
+                                                         disabled="true" style="width: 260px; margin-right: 5px; font-size: 12px;">
+
+                                            </p:inputText>
+                                            <h:outputText value="Fecha Expedición"/>
+                                            <p:calendar id="idFechaExpedición" value="#{calendarView.date3}"
+                                                        required="true" requiredMessage="Fecha de Creación" disabled="false" style="font-size: 12px;">
+                                            </p:calendar>
+
+                                        </p:panel>
+                                        <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
+                                            <p:panelGrid columns="6" id="idPanelAutorizacion">
+                                                <h:outputText value="Cédula"/>
+                                                <p:inputText value="" id="idCedula" required="true" requiredMessage="Ingrese la cédula">
+
+                                                </p:inputText>
+                                                <h:outputText value="Nombre: "/>
+                                                <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
+
+                                                </p:inputText>
+                                                <h:outputText value="Profesión"/>
+                                                <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
+
+                                                </p:inputText>
+                                            </p:panelGrid>
+                                        </p:panel>
+                                    </p:tab>
+                                </p:tab>
                             </p:tab>
-                            <p:tab title="Certificado de Disponibilidad Presupuestal">
-                                <p:panel id="idPanelPrincipal" style="margin:5px 0px 10px  0px;">
-                                    <p:dataTable id="idTableCDP" value="" widgetVar="cdpTable" rows="10"
-                                                 paginator="true" 
-                                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                                                 rowsPerPageTemplate="5,10,15" paginatorPosition="bottom" style="font-size: 12px;">
-                                        <p:column headerText="Fuente" sortBy="" filterBy="" filterMatchMode="in">
-                                            <f:facet name="filter">
-                                                <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
-                                                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
-                                                    <f:selectItem itemLabel="Gratuidad" itemValue="#{null}" noSelectionOption="true" />
-                                                    <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
-                                                </p:selectOneMenu>
-                                            </f:facet>
-                                            <h:outputText value="" style="width: 300px;"/>
-                                        </p:column>
-                                        <p:column headerText="Artículo Presupuestal" filterBy="" sortBy="" filterMatchMode="contains">
-                                            <h:outputText value="" style="width: 300px;"/>                                            
-                                        </p:column>
-                                        <p:column headerText="Concepto" sortBy="" filterBy="" filterMatchMode="in">
-                                            <f:facet name="filter">
-                                                <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
-                                                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
-                                                    <f:selectItem itemLabel="Mantenimiento del Establecimiento" itemValue="#{null}" noSelectionOption="true" />
-                                                    <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
-                                                </p:selectOneMenu>
-                                            </f:facet>
-                                            <h:outputText value="" style="width: 300px;"/>
-                                        </p:column>
-                                        <p:column headerText="Valor" sortBy="" filterBy="" filterMatchMode="startWith">
-                                            <h:outputText value=""/>
-                                        </p:column>
-                                    </p:dataTable>
-                                </p:panel>
-                            </p:tab>
-                            <p:tab title="Objeto">
-                                <p:panel id="panelObjeto">
-                                    <p:inputTextarea id="idObjeto" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
-                                                     style="width: 900px;" maxlength="2000">
 
-                                    </p:inputTextarea>
-                                    <br/>
-                                    <h:outputText value="Se expide a solicitud"/>
-                                    <br/>
-                                    <h:outputText value="Identifiación: "/>
-                                    <p:inputText id="idIdentificacionExpedicion" required="true" requiredMessage="Escriba el número de Identificación"
-                                                 style="font-size: 12px;">
 
-                                    </p:inputText>
-                                    <h:outputText value="Nombre: "/>
-                                    <p:inputText id="idNombreExpedición" required="true" requiredMessage="Se expide a solicitud del señor: " 
-                                                 disabled="true" style="width: 260px; margin-right: 5px; font-size: 12px;">
-
-                                    </p:inputText>
-                                    <h:outputText value="Fecha Expedición"/>
-                                    <p:calendar id="idFechaExpedición" value="#{calendarView.date3}"
-                                                required="true" requiredMessage="Fecha de Creación" disabled="false" style="font-size: 12px;">
-                                    </p:calendar>
-
-                                </p:panel>
-                                <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
-                                    <p:panelGrid columns="6" id="idPanelAutorizacion">
-                                        <h:outputText value="Cédula"/>
-                                        <p:inputText value="" id="idCedula" required="true" requiredMessage="Ingrese la cédula">
-
-                                        </p:inputText>
-                                        <h:outputText value="Nombre: "/>
-                                        <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
-
-                                        </p:inputText>
-                                        <h:outputText value="Profesión"/>
-                                        <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
-
-                                        </p:inputText>
-                                    </p:panelGrid>
-                                </p:panel>
-                            </p:tab>
                         </p:accordionPanel>
                     </p:panel>
                 </h:form>
