@@ -1,0 +1,76 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 2, 2018, 12:31:19 AM
+    Author     : json
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+#menu { 
+    float: left; 
+    background: #FFF; 
+    padding: 10px 10px 0px 20px;
+    border:1px solid #a6c9e2;
+    width: auto;
+    margin-top:65px !important;
+    margin-left: 0px;
+    height: auto;
+    position: fixed;
+    font-size: 13px;
+
+}
+
+#contenedor {
+    text-align: center;
+    background: #c5dbec;
+    border:1px solid #a6c9e2;
+    border-radius: 0px !important;
+    width:99.8%;
+    z-index: 1;
+    height: 12%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    float: left; 
+    position: fixed;
+    font-size: 13px !important;
+
+
+}
+#cuerpo{
+    width: 78%;
+    margin-left: 260px;
+    margin-right:auto;
+    display:inline-block;
+    margin-top:68px !important;
+    padding: 12px 0px 0px 0px;
+    position: absolute;
+    font-size: 13px !important;
+}
+#pie {
+    text-align: center;
+    color: #4297d7;
+    background: #c5dbec;
+    border:1px solid #a6c9e2;
+    border-radius: 0px !important;
+    width: 99.8%;
+    z-index: 1;
+    height: 5%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    float: left; 
+    margin-top:640px !important;
+    height: auto;
+    position: fixed;
+    font-size: 13px;
+}

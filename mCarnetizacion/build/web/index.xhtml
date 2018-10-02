@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sistema de Carnetización IE</title>
+        <link href="http://localhost:8080/mCarnetizacion/css/main.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <ui:insert name="header">
+                <ui:include src="/system/encabezado.xhtml"/>
+            </ui:insert>   
+        </div>
+         <div id="menu">
+            <ui:insert name="menu">
+                <ui:include src="/system/menu.xhtml"/>
+            </ui:insert>   
+        </div>
+        
+        <div id="cuerpo">
+            <ui:insert name="body">
+                <ui:include src="/system/cuerpo.xhtml"/>
+            </ui:insert>
+        </div>
+        <div id="pie">
+            <ui:insert name="footer">
+                <ui:include src="/system/pie.xhtml"/>
+            </ui:insert>
+        </div>
+    </h:body>
+</html>
+

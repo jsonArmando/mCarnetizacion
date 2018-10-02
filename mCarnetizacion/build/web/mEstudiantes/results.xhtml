@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sistema de Carnetización IE</title>
+        <link href="http://localhost:8080/mCarnetizacion/css/main.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/index.xhtml">
+            <ui:define name="body">
+                <h:form>
+                    <p:panel id="panelBusqueda" header="Busqueda de Usuario">
+                        <p:accordionPanel id="idAccordBusqueda">
+                            <p:tab title="Integración">
+                                <p:panelGrid id="panelGridBusqueda" columns="6" >
+                                    <h:outputText  value="Fecha de Creación: " />
+                                    <p:calendar id="idFecha" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Creación" disabled="true">
+                                    </p:calendar>
+                                    <h:outputText value="Institución"/>
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    </p:inputText>
+                                    <h:outputText value="Busqueda: "/>
+                                    <p:inputText value="" id="idBusqueda">
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
+
+                    </p:panel>
+                    <p:panel header="Modulo de Carnetización: registro de estudiantes"  id="panelRegistro" style="margin:5px 0px 10px  0px;">
+                        <p:accordionPanel>
+                            <p:tab title="Formulario de Registro">
+                                <p:panelGrid columns="3" id="panelGridFormulario">
+                                    <h:outputText value="Nombres: "/>
+                                    <p:inputText value="" id="idNombres" required="true" requiredMessage="Ingrese los Nombres" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idNombres"/>
+                                    <h:outputText value="Apellidos: "/>
+                                    <p:inputText value="" id="idApellidos" required="true" requiredMessage="Ingrese los Apellidos" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idApellidos"/>
+                                    <h:outputText  value="Fecha de Nacimiento: " />
+                                    <p:calendar id="idFechaNacimiento" value="#{calendarView.date3}" showOn="button" style="width:370px !important"
+                                                required="true" requiredMessage="Fecha de Nacimiento">
+                                    </p:calendar>
+                                    <p:message for="idFechaNacimiento"/>
+                                    <h:outputText value="Tipo de Identificación: "/>
+                                    <p:selectOneMenu id="idTipoIdentifiacacion" value="#" required="true" requiredMessage="Ingrese el Tipo de Identificación" style="width:270px !important">
+                                        <f:selectItem itemLabel="Seleccione Identificación" itemValue=""/>
+                                        <f:selectItem itemLabel="Tarjeta de Identidad" itemValue=""/>
+                                        <f:selectItem itemLabel="Cédula" itemValue=""/>
+                                        <f:selectItem itemLabel="Registro Civil" itemValue=""/>
+                                        <f:selectItem itemLabel="Pasaporte" itemValue=""/>
+                                        <f:selectItem itemLabel="Cédula Extranjera" itemValue=""/>
+                                    </p:selectOneMenu>
+                                    <p:message for="idTipoIdentifiacacion"/>
+
+                                    <h:outputText value="Identificación: "/>
+                                    <p:inputText value="" id="idIdentificacion" required="true" requiredMessage="Ingrese el Número de Identifiación" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idIdentificacion"/>
+
+                                    <h:outputText value="Dirección: "/>
+                                    <p:inputText value="" id="idDireccion" required="true" requiredMessage="Ingrese la Dirección" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idDireccion"/>
+
+                                    <h:outputText value="Correo Electrónico: "/>
+                                    <p:inputText value="" id="idEmail" required="true" requiredMessage="Ingrese un correo Electrónico" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idEmail"/>
+
+                                    <h:outputText value="Telefóno o Celular: "/>
+                                    <p:inputText value="" id="idCelular" required="true" requiredMessage="Registre un Número Telefónico" style="width:270px !important">
+                                    </p:inputText>
+                                    <p:message for="idCelular"/>
+
+                                    <h:outputText value="Seleccione Curso: "/>
+                                    <p:selectManyCheckbox id="idCurso" required="true" requiredMessage="Seleccione Curso" style="width:270px !important">
+                                        <f:selectItem itemLabel="Primaria" itemValue=""/>
+                                        <f:selectItem itemLabel="Secundaria" itemValue=""/>
+                                    </p:selectManyCheckbox>
+                                    <p:message for="idCurso"/>
+
+                                    <h:outputText value="Grados Primaria: "/>
+                                    <p:selectOneMenu id="GradoPrimaria" required="true" requiredMessage="Curso de Primaria" value="" style="width:270px !important">
+                                        <f:selectItem itemLabel="Primero" itemValue="01"/>
+                                        <f:selectItem itemLabel="Segundo" itemValue="02"/>
+                                        <f:selectItem itemLabel="Tercero" itemValue="03"/>
+                                        <f:selectItem itemLabel="Cuarto" itemValue="04"/>
+                                        <f:selectItem itemLabel="Quinto" itemValue="05"/>                                      
+                                    </p:selectOneMenu>
+                                    <p:message for="GradoPrimaria"/>
+
+
+                                    <h:outputText value="Grados Secundaria: "/>
+                                    <p:selectOneMenu id="GradoSecundaria" required="true" requiredMessage="Curso de Secundaria" value="" style="width:270px !important; font-size: 14px">
+                                        <f:selectItem itemLabel="Sexto" itemValue="06"/>
+                                        <f:selectItem itemLabel="Septimo" itemValue="07"/>
+                                        <f:selectItem itemLabel="Octavo" itemValue="08"/>
+                                        <f:selectItem itemLabel="Noveno" itemValue="09"/>
+                                        <f:selectItem itemLabel="Decimo" itemValue="10"/>
+                                        <f:selectItem itemLabel="Once" itemValue="11"/>
+                                    </p:selectOneMenu>
+                                    <p:message for="GradoSecundaria"/>
+
+
+
+                                    <h:outputText value="Grado: " />
+                                    <p:inputText value="" id="idGrado" required="false" requiredMessage="Ingrese el Grado en Curso" style="width:600px !important">
+                                    </p:inputText>
+                                    <p:message for="idGrado"/>
+                                    </p:panelGrid>
+                                <p:commandButton value="Guardar" action="results" type="submit" ajax="false" style="margin-top: 5px;"/>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

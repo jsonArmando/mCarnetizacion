@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistema de Carnetización IE</title>
+        <link href="http://localhost:8080/mCarnetizacion/css/main.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/index.xhtml">
+            <ui:define name="body">
+                <h:form>
+                    <p:panel id="panelBusqueda" header="Busqueda de Usuario">
+                        <p:accordionPanel id="idAccordBusqueda">
+                            <p:tab title="Integración">
+                                <p:panelGrid id="panelGridBusqueda" columns="6" >
+                                    <h:outputText  value="Fecha de Creación: " />
+                                    <p:calendar id="idFecha" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Creación" disabled="true">
+                                    </p:calendar>
+                                    <h:outputText value="Institución"/>
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    </p:inputText>
+                                    <h:outputText value="Busqueda: "/>
+                                    <p:inputText value="" id="idBusqueda">
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
+
+                    </p:panel>
+                    
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

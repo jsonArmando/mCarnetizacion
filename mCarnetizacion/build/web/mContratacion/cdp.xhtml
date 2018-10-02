@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sistema de Carnetización IE</title>
+        <link href="http://localhost:8080/mCarnetizacion/css/main.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/index.xhtml">
+            <ui:define name="body">
+                <h:form>
+                    <p:panel id="panelBusqueda" header="Solicitud de Certificado de Disponibilidad Presupuestal">
+                        <p:accordionPanel id="idAccordBusqueda" dynamic="false" multiple="false">
+                            <p:tab title="CDP">
+                                <p:panelGrid id="panelGridBusqueda" columns="6" >
+                                    <h:outputText  value="Fecha de Creación: " />
+                                    <p:calendar id="idFecha" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Creación" disabled="true">
+                                    </p:calendar>
+                                    <h:outputText value="Institución"/>
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    </p:inputText>
+                                    <h:outputText value="Busqueda: "/>
+                                    <p:inputText value="" id="idBusqueda">
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Certificado de Disponibilidad Presupuestal">
+                                <p:panel id="idPanelPrincipal" style="margin:5px 0px 10px  0px;">
+                                    <p:dataTable id="idTableCDP" value="" widgetVar="cdpTable" rows="10"
+                                                 paginator="true" 
+                                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                 rowsPerPageTemplate="5,10,15" paginatorPosition="bottom" style="font-size: 12px;">
+                                        <p:column headerText="Fuente" sortBy="" filterBy="" filterMatchMode="in">
+                                            <f:facet name="filter">
+                                                <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
+                                                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Gratuidad" itemValue="#{null}" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
+                                                </p:selectOneMenu>
+                                            </f:facet>
+                                            <h:outputText value="" style="width: 300px;"/>
+                                        </p:column>
+                                        <p:column headerText="Artículo Presupuestal" filterBy="" sortBy="" filterMatchMode="contains">
+                                            <h:outputText value="" style="width: 300px;"/>                                            
+                                        </p:column>
+                                        <p:column headerText="Concepto" sortBy="" filterBy="" filterMatchMode="in">
+                                            <f:facet name="filter">
+                                                <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:200px;" >
+                                                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Mantenimiento del Establecimiento" itemValue="#{null}" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Pagos" itemValue="#{null}" noSelectionOption="true" />
+                                                </p:selectOneMenu>
+                                            </f:facet>
+                                            <h:outputText value="" style="width: 300px;"/>
+                                        </p:column>
+                                        <p:column headerText="Valor" sortBy="" filterBy="" filterMatchMode="startWith">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                    </p:dataTable>
+                                </p:panel>
+                            </p:tab>
+                            <p:tab title="Objeto">
+                                <p:panel id="panelObjeto">
+                                    <p:inputTextarea id="idObjeto" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                     style="width: 900px;" maxlength="2000">
+
+                                    </p:inputTextarea>
+                                    <br/>
+                                    <h:outputText value="Se expide a solicitud"/>
+                                    <br/>
+                                    <h:outputText value="Identifiación: "/>
+                                    <p:inputText id="idIdentificacionExpedicion" required="true" requiredMessage="Escriba el número de Identificación"
+                                                 style="font-size: 12px;">
+
+                                    </p:inputText>
+                                    <h:outputText value="Nombre: "/>
+                                    <p:inputText id="idNombreExpedición" required="true" requiredMessage="Se expide a solicitud del señor: " 
+                                                 disabled="true" style="width: 260px; margin-right: 5px; font-size: 12px;">
+
+                                    </p:inputText>
+                                    <h:outputText value="Fecha Expedición"/>
+                                    <p:calendar id="idFechaExpedición" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Creación" disabled="false" style="font-size: 12px;">
+                                    </p:calendar>
+
+                                </p:panel>
+                                <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
+                                    <p:panelGrid columns="6" id="idPanelAutorizacion">
+                                        <h:outputText value="Cédula"/>
+                                        <p:inputText value="" id="idCedula" required="true" requiredMessage="Ingrese la cédula">
+
+                                        </p:inputText>
+                                        <h:outputText value="Nombre: "/>
+                                        <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
+
+                                        </p:inputText>
+                                        <h:outputText value="Profesión"/>
+                                        <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
+
+                                        </p:inputText>
+                                    </p:panelGrid>
+                                </p:panel>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

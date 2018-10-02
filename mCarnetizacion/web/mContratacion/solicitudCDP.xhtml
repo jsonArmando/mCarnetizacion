@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sistema de Carnetización IE</title>
+        <link href="http://localhost:8080/mCarnetizacion/css/main.css" type="text/css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/index.xhtml">
+            <ui:define name="body">
+                <h:form>
+                    <p:panel id="panelBusqueda" header="Solicitud de Certificado de Disponibilidad Presupuestal">
+                        <p:accordionPanel id="idAccordBusqueda">
+                            <p:tab title="CDP">
+                                <p:panelGrid id="panelGridBusqueda" columns="6" >
+                                    <h:outputText  value="Fecha de Creación: " />
+                                    <p:calendar id="idFecha" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Creación" disabled="true">
+                                    </p:calendar>
+                                    <h:outputText value="Institución"/>
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    </p:inputText>
+                                    <h:outputText value="Busqueda: "/>
+                                    <p:inputText value="" id="idBusqueda">
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </p:panel>
+                    <p:panel header="Informe de Solicitud" id="idPanelSolicitud" style="margin:5px 0px 10px  0px !important;">
+                        <p:accordionPanel>
+                            <p:tab title="Solicitud">
+                                <p:panelGrid id="panelGridSolicitud" columns="6" >
+                                    <h:outputText value="Fecha de Solicitud: " />
+                                    <p:calendar id="idFechaSolicitud" value="#{calendarView.date3}"
+                                                required="true" requiredMessage="Fecha de Solicitud" disabled="false">
+                                    </p:calendar>
+                                    <h:outputText value="Número de Solicitud"/>
+                                    <p:inputText value="" id="idNumeroSolicitud" required="true" disabled="false">
+
+                                    </p:inputText>
+                                    <h:outputText value="Tipo de Solicitud: "/>
+                                    <p:selectOneMenu id="idTipoSolicitud" value="#" required="true" requiredMessage="Seleccione Tipo de Solicitud">
+                                        <f:selectItem itemLabel="Inicial" itemValue=""/>
+                                        <f:selectItem itemLabel="Adición" itemValue=""/>
+                                    </p:selectOneMenu>
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Información Solicitante">
+                                <p:panelGrid columns="6" id="panelGridSolicitante">
+                                    <h:outputText value="DEPENDENCIA"/>
+                                    <p:selectOneMenu id="idDependencia" value="#" required="true" requiredMessage="Seleccione Dependencia">
+                                        <f:selectItem itemLabel="RECTORIA" itemValue=""/>
+                                        <f:selectItem itemLabel="SECRETARIA" itemValue=""/>
+                                    </p:selectOneMenu>
+                                    <h:outputText value="NOMBRE"/>
+                                    <p:inputText id="idNombreSolicitante" value="" required="true" requiredMessage="Ingrese el nombre del usuario">
+
+                                    </p:inputText>
+                                    <h:outputText value="POLIIZA DE MANEJO"/>
+                                    <p:inputText value="" id="idPoliizaManejo" required="true" requiredMessage="Registre el Número de la Poliiza">
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Concepto de Gasto">
+                                <p:panelGrid columns="10" id="idConceptodeGasto">
+                                    <h:outputText value="Defina"/>
+                                    <p:inputTextarea value="" id="idConceptoGasto" required="true" requiredMessage="Concepto de Gasto" maxlength="2000">
+
+                                    </p:inputTextarea>
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Valor">
+                                <p:panelGrid columns="6" id="idValorGasto">
+                                    <h:outputText value="VALOR DE LA DISPONIBILIDAD PRESUPUESTAL SOLICITADA"/>
+                                    <p:inputText value="" required="true" requiredMessage="Ingrese el valor de disponibilida">
+                                        
+                                    </p:inputText>
+                                </p:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </p:panel>
+                    <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
+                        <p:panelGrid columns="6" id="idPanelAutorizacion">
+                            <h:outputText value="Cédula"/>
+                            <p:inputText value="" id="idCedula" required="true" requiredMessage="Ingrese la cédula">
+                                
+                            </p:inputText>
+                            <h:outputText value="Nombre: "/>
+                            <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
+                                
+                            </p:inputText>
+                            <h:outputText value="Profesión"/>
+                            <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
+                                
+                            </p:inputText>
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
