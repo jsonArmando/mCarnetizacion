@@ -14,20 +14,48 @@
                 <h:form>
                     <p:panel id="panelBusqueda" header="Busqueda de Usuario">
                         <p:accordionPanel id="idAccordBusqueda">
-                            <p:tab title="Integración">
+                            <p:tab title="Recursos">
                                 <p:panelGrid id="panelGridBusqueda" columns="6" >
                                     <h:outputText  value="Fecha de Creación: " />
                                     <p:calendar id="idFecha" value="#{calendarView.date3}"
                                                 required="true" requiredMessage="Fecha de Creación" disabled="true">
                                     </p:calendar>
                                     <h:outputText value="Institución"/>
-                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true"
+                                                 style="width: 250px;">
                                     </p:inputText>
                                     <h:outputText value="Busqueda: "/>
                                     <p:inputText value="" id="idBusqueda">
                                     </p:inputText>
                                 </p:panelGrid>
+
+                                <p:panel id="idPanelConsulta" style="margin: 5px 0px 10px 0px">
+                                    <p:dataTable id="idTableConsulta" value="" widgetVar="consultaTable" rows="10"
+                                                 paginator="true" paginatorPosition="bottom" 
+                                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                 style="font-size: 10px; width: 960px;">
+                                        <p:column headerText="IDENTIFICACIÓN" filterBy="" sortBy="">
+                                            <h:outputText value="" />
+                                        </p:column>
+                                        <p:column headerText="NOMBRES" filterBy="" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>                                        
+                                        <p:column filterBy="" headerText="CURSO" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="FECHA NACIMIENTO" filterBy="" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="DIRECCIÓN" filterBy="" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                        <p:column headerText="ACUDIENTE" filterBy="" sortBy="">
+                                            <h:outputText value=""/>
+                                        </p:column>
+                                    </p:dataTable>
+                                </p:panel>
                             </p:tab>
+
                         </p:accordionPanel>
                     </p:panel>              
                 </h:form>
@@ -35,4 +63,3 @@
         </ui:composition>
     </h:body>
 </html>
-
