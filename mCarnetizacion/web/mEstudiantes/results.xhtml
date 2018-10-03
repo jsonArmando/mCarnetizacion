@@ -15,14 +15,15 @@
                 <h:form>
                     <p:panel id="panelBusqueda" header="Busqueda de Usuario">
                         <p:accordionPanel id="idAccordBusqueda">
-                            <p:tab title="Integración">
+                            <p:tab title="Recursos">
                                 <p:panelGrid id="panelGridBusqueda" columns="6" >
-                                    <h:outputText  value="Fecha de Creación: " />
+                                    <h:outputText  value="Fecha de Creación: " id="outputText"/>
                                     <p:calendar id="idFecha" value="#{calendarView.date3}"
                                                 required="true" requiredMessage="Fecha de Creación" disabled="true">
                                     </p:calendar>
                                     <h:outputText value="Institución"/>
-                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    <p:inputText value="#{registroDB.institucion}" id="idInstitución" required="true" disabled="true" 
+                                                 style="width: 250px;">
                                     </p:inputText>
                                     <h:outputText value="Busqueda: "/>
                                     <p:inputText value="" id="idBusqueda">

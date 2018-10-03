@@ -5,6 +5,7 @@
  */
 package com.empresa.carnetizacion.modelo;
 
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -28,11 +29,28 @@ public class registroEstudiantes {
     private Integer nTelefonico;
     private int curso;
     private int grado;
+    private String institucion="Institución Educativa Simón Bolivar";
+    private Date fechaCreacion;
+
+    public String getInstitucion() {
+        return institucion;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
     
-    
+
 //    public registroEstudiantes() {
 //    }
 //    
+    public void setInstitucion(String institucion) {
+        this.institucion = institucion;
+    }
 
     public String getNombres() {
         return nombres;

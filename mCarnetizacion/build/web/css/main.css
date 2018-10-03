@@ -11,16 +11,16 @@ and open the template in the editor.
 
 #menu { 
     float: left; 
-    background: #FFF; 
+    background: #c1dbea; 
     padding: 10px 10px 0px 20px;
     border:1px solid #a6c9e2;
     width: auto;
     margin-top:65px !important;
-    margin-left: 0px;
+    margin-left: -10px;
     height: auto;
     position: fixed;
-    font-size: 13px;
-
+    font-size: 11px;
+    height: 100% !important;
 }
 
 #contenedor {
@@ -39,7 +39,7 @@ and open the template in the editor.
     margin-top: 0px;
     float: left; 
     position: fixed;
-    font-size: 13px !important;
+    font-size: 11px !important;
 
 
 }
@@ -51,7 +51,7 @@ and open the template in the editor.
     margin-top:68px !important;
     padding: 12px 0px 0px 0px;
     position: absolute;
-    font-size: 13px !important;
+    font-size: 11px !important;
 }
 #pie {
     text-align: center;
@@ -72,5 +72,14 @@ and open the template in the editor.
     margin-top:640px !important;
     height: auto;
     position: fixed;
-    font-size: 13px;
+    font-size: 11px;
+}
+#menu, .outputText{
+    font-size: 11px !important;
+    font-weight:bold !important;
+
+}
+#cuerpo, .outputText{
+    font-size: 11px !important;
+    font-weight:bold !important;
 }
