@@ -2,14 +2,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:body>
         <ui:composition>
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="3">
                 <h:graphicImage url="/images/logo.png" alt="IEducativa" width="60px" />
-                <h:outputText style="margin-left: 50px; font-size:28px; color: #013042;" />
+                <h:outputText style="margin-left: 50px; font-size:28px; color: #013042;" />               
             </h:panelGrid>
             
+                <h:form>
+                    <p:growl id="messages"/>
+                    <div id="idMenuBar" style="margin: -35px 0px 0px 0px; width: 350px;">
+                        <p:menubar>
+                            <p:submenu label="File" icon="ui-icon-document">
+                                <p:menuitem value="Project" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Edit" icon="ui-icon-pencil">
+                                <p:menuitem value="New" url="#"/>
+                                <p:menuitem value="Save" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Help" icon="ui-icon-help">
+                                <p:menuitem value="Contents" url=""/>
+                            </p:submenu>
+                            <p:submenu label="Action" icon="ui-icon-gear">
+                                <p:menuitem value="Ajax" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Quit" icon="ui-icon-close">
+                            </p:submenu>
+                        </p:menubar>    
+                    </div>
+                </h:form>
+                        
         </ui:composition>
     </h:body>
 </html>
