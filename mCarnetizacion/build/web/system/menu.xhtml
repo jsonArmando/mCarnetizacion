@@ -12,59 +12,41 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="1" style="margin-bottom: 50px;">
-               <!-- <p:scrollPanel style="width:250px;height:auto;">-->
-                    <p:panelMenu>
-                        <p:submenu label="Modulo de Estudiantes">
-                            <p:menuitem value="Registro Estudiantes" action="/mEstudiantes/results" icon="fa-apple"/>
-                            <p:menuitem value="Consulta Estudiantes" action="/mEstudiantes/consultaEstudiantes" icon="fa-apple"/>
-                        </p:submenu>
-                        <p:submenu label="Modulo de Docentes">
-                            <p:menuitem value="Registro Docentes" action="#"/>
-                            <p:menuitem value="Consulta" action="#"/>
-                            <p:menuitem value="Registro de Notas" action="#"/>
-                            <p:menuitem value="Validaciones" action="#"/>
-                        </p:submenu>
-                        <p:submenu label="Modulo de Funcionarios">
-                            <p:menuitem value="Consulta de Contable" action="#"/>
-                        </p:submenu>
-                        <p:submenu label="Modulo Administrativo">
-                            <p:menuitem value="Administración" action="#"/>
-                            <p:menuitem value="Consulta" action="#"/>
-                            <p:menuitem value="Tabla Referenciales" action="#"/>
-                        </p:submenu>
-                        <p:submenu label="Modulo de Contratación">
-                            <p:menuitem value="Solicitud CDP" action="/mContratacion/solicitudCDP"/>
-                            <p:menuitem value="CDP" action="/mContratacion/cdp"/>
-                            <p:menuitem value="Proceso de Contratación" action="/mContratacion/estudio"/>
-                            <p:menuitem value="Resolución de Contratación" action="#"/>
-                            <p:menuitem value="Contrato" action="#"/>
-                            <p:menuitem value="Responsable del Presupuesto" action="#"/>
-                            <p:menuitem value="Iniciación" action="#"/>
-                            <p:menuitem value="Liquidación" action="#"/>
-                            <p:menuitem value="Comprobante de Egreso" action="#"/>
-                        </p:submenu>
-                        <p:submenu label="Modulo de Inventarios">
-                            <p:menuitem value="Inventario de Recursos" action="#"/>
-                        </p:submenu>
-                    </p:panelMenu>
-                <!--</p:scrollPanel>-->
-                <!--
-            <h:commandLink value="Registro de Estudiantes" action="#"
-                           actionListener="#">
-                <f:attribute name="tipo" value="nuevo"/>
-                <f:attribute name="titulo" value="Estudiantes Nuevos"/>
-            </h:commandLink>
-
-            <h:commandLink value="Administrador" action="#"
-                           actionListener="#">
-                <f:attribute name="tipo" value="nuevo"/>
-                <f:attribute name="titulo" value="Estudiantes Nuevos"/>
-            </h:commandLink>
-            <h:commandLink value="Consulta de Estudiantes" action="#"
-                           actionListener="#">
-                <f:attribute name="tipo" value="nuevo"/>
-                <f:attribute name="titulo" value="Estudiantes Nuevos"/>
-            </h:commandLink>-->
+                <!-- <p:scrollPanel style="width:250px;height:auto;">-->
+                <p:panelMenu>
+                    <p:submenu label="Modulo de Estudiantes">
+                        <p:menuitem value="Registro Estudiantes" action="/mEstudiantes/results" icon="fa-apple"/>
+                        <p:menuitem value="Consulta Estudiantes" action="/mEstudiantes/consultaEstudiantes" icon="fa-apple"/>
+                    </p:submenu>
+                    <p:submenu label="Modulo de Docentes">
+                        <p:menuitem value="Registro Docentes" action="/mDocentes/resultsDocentes"/>
+                        <p:menuitem value="Consulta" action="/mDocentes/consultaDocentes"/>
+                        <p:menuitem value="Registro de Notas" action="/mDocentes/registroNotas"/>
+                        <p:menuitem value="Validaciones" action="/mDocentes/validaciones"/>
+                    </p:submenu>
+                    <p:submenu label="Modulo de Funcionarios">
+                        <p:menuitem value="Consulta Contable" action="/mFuncionarios/consultaContable"/>
+                    </p:submenu>
+                    <p:submenu label="Modulo Administrativo">
+                        <p:menuitem value="Administración" action="/mAdministrativos/administracion"/>
+                        <p:menuitem value="Consulta" action="/mAdministrativos/consultaAdministracion"/>
+                        <p:menuitem value="Tabla Referenciales" action="/mAdministrativos/tablaReferenciales"/>
+                    </p:submenu>
+                    <p:submenu label="Modulo de Contratación">
+                        <p:menuitem value="Solicitud CDP" action="/mContratacion/solicitudCDP"/>
+                        <p:menuitem value="CDP" action="/mContratacion/cdp"/>
+                        <p:menuitem value="Proceso de Contratación" action="/mContratacion/estudio"/>
+                        <p:menuitem value="Resolución de Contratación" action="/mContratacion/resolucion"/>
+                        <p:menuitem value="Contrato" action="/mContratacion/contrato"/>
+                        <p:menuitem value="Responsable del Presupuesto" action="/mContratacion/responsablePresupuesto"/>
+                        <p:menuitem value="Iniciación" action="/mContratacion/iniciacion"/>
+                        <p:menuitem value="Liquidación" action="/mContratacion/liquidacion"/>
+                        <p:menuitem value="Comprobante de Egreso" action="/mContratacion/responsablePresupuesto"/>
+                    </p:submenu>
+                    <p:submenu label="Modulo de Inventarios">
+                        <p:menuitem value="Inventario de Recursos" action="#"/>
+                    </p:submenu>
+                </p:panelMenu>
             </h:panelGrid>
         </h:form>
     </h:body>
