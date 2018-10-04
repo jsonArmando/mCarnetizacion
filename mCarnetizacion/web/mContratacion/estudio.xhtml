@@ -22,7 +22,8 @@
                                                 required="true" requiredMessage="Fecha de Creación" disabled="true">
                                     </p:calendar>
                                     <h:outputText value="Institución"/>
-                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true" 
+                                                 style="width: 310px;">
                                     </p:inputText>
                                     <h:outputText value="Busqueda: "/>
                                     <p:inputText value="" id="idBusqueda">
@@ -32,53 +33,96 @@
                         </p:accordionPanel>
                         <p:panel header="Informe de Solicitud" id="idPanelSolicitud" style="margin:5px 0px 10px  0px !important;">
                             <p:accordionPanel>
+                                <p:tab title="Contratación">
+                                    <p:panelGrid columns="6" id="idValorGasto">
+                                        <h:outputText value="Dependencia Delegatoria"/>
+                                        <p:selectOneMenu id="idDependencia" value="#" required="true" requiredMessage="Seleccione Dependencia">
+                                            <f:selectItem itemLabel="RECTORIA" itemValue=""/>
+                                            <f:selectItem itemLabel="SECRETARIA" itemValue=""/>
+                                        </p:selectOneMenu>
+                                        <h:outputText value="Tipo de Proceso"/>
+                                        <p:selectOneMenu id="idTipoProceso" value="" required="true" requiredMessage="Seleccione el Tipo de Contratación">
+                                            <f:selectItem itemLabel="Contratación Directa" itemValue=""/>
+                                            <f:selectItem itemLabel="Prestación de Servicios" itemValue=""/>
+                                        </p:selectOneMenu>
+
+                                        <h:outputText value="Valor Presupuestado"/>
+                                        <p:inputText id="idValorPresupuestado" required="true" requiredMessage="Ingrese el Valor del Presupuesto">
+
+                                        </p:inputText>
+                                    </p:panelGrid>
+                                    <p:panelGrid id="idPanelValorLetras" columns="6" style="margin-top: 5px;">
+                                        <h:outputText value="Valor en Letras"/>
+                                        <p:inputText id="idValorLetras" required="true" disabled="true" style="width: 802px;">
+
+                                        </p:inputText>
+                                    </p:panelGrid>
+                                    <p:panelGrid id="idPanelDuracion" columns="6" style="margin-top: 5px;">
+                                        <h:outputText value="Plazo de Ejecución"/>
+                                        <p:inputText id="idPlazoEjecucion" required="true" disabled="true" style="width: 802px;">
+
+                                        </p:inputText>
+                                    </p:panelGrid>
+                                </p:tab>
                                 <p:tab title="Generealidades Proceso de Contratación">
                                     <p:panelGrid id="panelGridSolicitud" columns="1" >
-                                        <h:outputText value="DESCRIPCIÓN DE LA NECESIDAD"/>
+                                        <h:outputText value="1. DESCRIPCIÓN DE LA NECESIDAD"/>
                                         <p:inputTextarea id="idDescripcionNecesidad" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
                                                          style="width: 900px;" maxlength="2000">
 
                                         </p:inputTextarea>
-                                        <h:outputText value="DESCRIPCIÓN DEL OBJETO A CONTRATAR"/>
+                                        <h:outputText value="2. DESCRIPCIÓN DEL OBJETO A CONTRATAR"/>
                                         <p:inputTextarea id="idObjetoContratar" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
                                                          style="width: 900px;" maxlength="2000">
 
                                         </p:inputTextarea>
 
-                                    </p:panelGrid>
-                                </p:tab>
-                                <p:tab title="Información Solicitante">
-                                    <p:panelGrid columns="6" id="panelGridSolicitante">
-                                        <h:outputText value="DEPENDENCIA"/>
-                                        <p:selectOneMenu id="idDependencia" value="#" required="true" requiredMessage="Seleccione Dependencia">
-                                            <f:selectItem itemLabel="RECTORIA" itemValue=""/>
-                                            <f:selectItem itemLabel="SECRETARIA" itemValue=""/>
-                                        </p:selectOneMenu>
-                                        <h:outputText value="NOMBRE"/>
-                                        <p:inputText id="idNombreSolicitante" value="" required="true" requiredMessage="Ingrese el nombre del usuario">
+                                        <p:panel id="idPanelConsulta" style="margin: 5px 0px 10px 0px">
+                                            <p:dataTable id="idTableConsulta" value="" widgetVar="consultaTable" rows="10"
+                                                         paginator="true" paginatorPosition="bottom" 
+                                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                                         style="font-size: 10px; width: 860px;">
+                                                <p:column headerText="DESCRIPCIÓN DEL SERVICIO O SUMINISTRO" filterBy="" sortBy=""
+                                                          style="width: 430px;">
+                                                    <h:outputText value="" style="width: 330px;" />
+                                                </p:column>
+                                                <p:column headerText="UNIDAD DE MEDIDA" filterBy="" sortBy="">
+                                                    <h:outputText value=""/>
+                                                </p:column>                                        
+                                                <p:column filterBy="" headerText="CANTIDAD" sortBy="">
+                                                    <h:outputText value=""/>
+                                                </p:column>                                                
+                                            </p:dataTable>
+                                        </p:panel>
 
-                                        </p:inputText>
-                                        <h:outputText value="POLIIZA DE MANEJO"/>
-                                        <p:inputText value="" id="idPoliizaManejo" required="true" requiredMessage="Registre el Número de la Poliiza">
-                                        </p:inputText>
-                                    </p:panelGrid>
-                                </p:tab>
-                                <p:tab title="Concepto de Gasto">
-                                    <p:panelGrid columns="10" id="idConceptodeGasto">
-                                        <h:outputText value="Defina"/>
-                                        <p:inputTextarea value="" id="idConceptoGasto" required="true" requiredMessage="Concepto de Gasto" maxlength="2000">
+                                        <h:outputText value="3. FUNDAMENTOS JURÍDICOS QUE SOPORTAN LA MODALIDAD DE SELECCIÓN"/>
+                                        <p:inputTextarea id="idMoldalidadSeleccion" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                         style="width: 900px;" maxlength="2000">
 
                                         </p:inputTextarea>
-                                    </p:panelGrid>
-                                </p:tab>
-                                <p:tab title="Valor">
-                                    <p:panelGrid columns="6" id="idValorGasto">
-                                        <h:outputText value="VALOR DE LA DISPONIBILIDAD PRESUPUESTAL SOLICITADA"/>
-                                        <p:inputText value="" required="true" requiredMessage="Ingrese el valor de disponibilida">
+                                        <h:outputText value="4. ANALISIS QUE SOPORTA EL VALOR ESTIMADO DEL CONTRATO"/>
+                                        <p:inputTextarea id="idEstimadoContrato" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                         style="width: 900px;" maxlength="2000">
 
-                                        </p:inputText>
+                                        </p:inputTextarea>
+                                        <h:outputText value="5. OBLIGACIONES DEL CONTRATISTA"/>
+                                        <p:inputTextarea id="idObligacionesContratista" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                         style="width: 900px;" maxlength="2000">
+
+                                        </p:inputTextarea>
+                                        <h:outputText value="6. OBLIGACIONES DE LA INSTITUCIÓN"/>
+                                        <p:inputTextarea id="idObligacionesInstitucion" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                         style="width: 900px;" maxlength="2000">
+
+                                        </p:inputTextarea>
+                                        <h:outputText value="7. INTERVENTORÍA O/Y SUPERVISIÓN"/>
+                                        <p:inputTextarea id="idInterventoria" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
+                                                         style="width: 900px;" maxlength="2000">
+
+                                        </p:inputTextarea>
+
                                     </p:panelGrid>
-                                </p:tab>
+                                </p:tab>                     
                             </p:accordionPanel>
                         </p:panel>
                         <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
@@ -88,11 +132,12 @@
 
                                 </p:inputText>
                                 <h:outputText value="Nombre: "/>
-                                <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
+                                <p:inputText value="" id="idFirma" required="false" 
+                                             requiredMessage="Valide el número de cédula" style="width: 330px;">
 
                                 </p:inputText>
                                 <h:outputText value="Profesión"/>
-                                <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
+                                <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula" style="width: 200px">
 
                                 </p:inputText>
                             </p:panelGrid>

@@ -22,7 +22,7 @@
                                     </p:calendar>
                                     <h:outputText value="Institución"/>
                                     <p:inputText value="" id="idInstitución" required="true" disabled="true"
-                                                 style="width: 250px;">
+                                                 style="width: 270px;">
                                     </p:inputText>
                                     <h:outputText value="Busqueda: "/>
                                     <p:inputText value="" id="idBusqueda">
@@ -54,8 +54,25 @@
                                         </p:column>
                                     </p:dataTable>
                                 </p:panel>
-                            </p:tab>
+                                <p:panel header="Firma de Autorización" id="idPanelFirma" style="margin:5px 0px 10px  0px !important;">
+                                    <p:panelGrid columns="6" id="idPanelAutorizacion">
+                                        <h:outputText value="Cédula"/>
+                                        <p:inputText value="" id="idCedula" required="true" requiredMessage="Ingrese la cédula">
 
+                                        </p:inputText>
+                                        <h:outputText value="Nombre: "/>
+                                        <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula"
+                                                     style="width: 300px;">
+
+                                        </p:inputText>
+                                        <h:outputText value="Profesión"/>
+                                        <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula"
+                                                     style="width: 190px;">
+
+                                        </p:inputText>
+                                    </p:panelGrid>
+                                </p:panel>
+                            </p:tab>
                         </p:accordionPanel>
                     </p:panel>              
                 </h:form>

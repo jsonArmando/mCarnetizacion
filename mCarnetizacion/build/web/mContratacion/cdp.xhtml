@@ -15,14 +15,14 @@
                 <h:form>
                     <p:panel id="panelBusqueda" header="Solicitud de Certificado de Disponibilidad Presupuestal">
                         <p:accordionPanel id="idAccordBusqueda" dynamic="false" multiple="false">
-                            <p:tab title="CDP">
+                            <p:tab title="Recursos">
                                 <p:panelGrid id="panelGridBusqueda" columns="6" >
                                     <h:outputText  value="Fecha de Creación: " />
                                     <p:calendar id="idFecha" value="#{calendarView.date3}"
                                                 required="true" requiredMessage="Fecha de Creación" disabled="true">
                                     </p:calendar>
                                     <h:outputText value="Institución"/>
-                                    <p:inputText value="" id="idInstitución" required="true" disabled="true">
+                                    <p:inputText value="" id="idInstitución" required="true" disabled="true" style="width: 250px;">
                                     </p:inputText>
                                     <h:outputText value="Busqueda: "/>
                                     <p:inputText value="" id="idBusqueda">
@@ -66,25 +66,26 @@
                                     <p:tab title="Objeto">
                                         <p:panel id="panelObjeto">
                                             <p:inputTextarea id="idObjeto" required="true" requiredMessage="Justifique el Certificado de Disponibilidad Presupuestal" 
-                                                             style="width: 900px;" maxlength="2000">
+                                                             style="width: 940px;" maxlength="2000">
 
                                             </p:inputTextarea>
                                             <br/>
                                             <h:outputText value="Se expide a solicitud"/>
                                             <br/>
+                                            <br/>
                                             <h:outputText value="Identifiación: "/>
                                             <p:inputText id="idIdentificacionExpedicion" required="true" requiredMessage="Escriba el número de Identificación"
-                                                         style="font-size: 12px;">
+                                                         style="font-size: 12px; width: 200px;">
 
                                             </p:inputText>
                                             <h:outputText value="Nombre: "/>
                                             <p:inputText id="idNombreExpedición" required="true" requiredMessage="Se expide a solicitud del señor: " 
-                                                         disabled="true" style="width: 260px; margin-right: 5px; font-size: 12px;">
+                                                         disabled="true" style="width: 300px; margin-right: 5px; font-size: 12px;">
 
                                             </p:inputText>
                                             <h:outputText value="Fecha Expedición"/>
                                             <p:calendar id="idFechaExpedición" value="#{calendarView.date3}"
-                                                        required="true" requiredMessage="Fecha de Creación" disabled="false" style="font-size: 12px;">
+                                                        required="true" requiredMessage="Fecha de Creación" disabled="true" style="font-size: 12px;">
                                             </p:calendar>
 
                                         </p:panel>
@@ -95,11 +96,13 @@
 
                                                 </p:inputText>
                                                 <h:outputText value="Nombre: "/>
-                                                <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula">
+                                                <p:inputText value="" id="idFirma" required="false" requiredMessage="Valide el número de cédula"
+                                                             style="width: 330px;">
 
                                                 </p:inputText>
                                                 <h:outputText value="Profesión"/>
-                                                <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula">
+                                                <p:inputText value="" id="idProfesion" required="false" requiredMessage="Valide el número de cédula"
+                                                                >
 
                                                 </p:inputText>
                                             </p:panelGrid>
