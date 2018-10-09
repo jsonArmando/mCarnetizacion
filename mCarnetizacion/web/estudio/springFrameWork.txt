@@ -120,3 +120,17 @@ VISTA: FORMULARIO O TECONOLOGÍA QUE SE DESARROLLA
 
 ---------------------------------------------------------------------------
 COMO MANEJAR MVC EN SPRING
+UN MODELO PUEDE SER DESDE UNA BASE DE DATOS O UN DTO
+CREAR UNA LISTA DE NOMBRES EN SPRING FrameWork
+
+List<String>ListaNombres= Arrays.asList("Jose", "Armando","Son","Rojas");
+Podemos utilizar ModelAndView (Que sirve para generar Request de direcciones)
+
+---------------------------------------------------------------------------
+QUE ES UN FORMULARIO
+UN REGISTRO DE DATOS PARA ENVIAR HACIA EL SERVIDOR
+
+---------------------------------------------------------------------------
+CREAR PROYECTO SPRINGWEBFORM
+
+
