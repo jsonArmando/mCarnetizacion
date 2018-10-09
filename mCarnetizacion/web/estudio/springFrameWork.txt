@@ -1,0 +1,122 @@
+CONJUNTO DE ANOTACIONES SPRING FRAMEWORK
+
+spring xml configuration
+Uitlización de anotaciones 
+
+spring java configuration
+
+@Configuration //Anotaciones
+ @ComponentScan("com.acme.app.services") //Anotaciones
+ public class AppConfig {
+     // various @Bean definitions ...
+ }
+ El infierno de XML
+ ---------------------------------------------------------------------------
+ ANOTACIÓN @CONFIGURATION
+ 
+ @Configuration 
+ //Indica que es una configuración para Spring FrameWork en Java
+ 
+ public class SpringWeb{
+ 
+ }
+ ---------------------------------------------------------------------------
+ ANOTACIÓN @ENABLEWEBMVC
+
+@EnableWebMvc
+//Decir al archivo de configuración que trabaje con MVC
+//ALT + INTRO PARA IMPORTAR LAS LIBRERIAS 
+
+ ---------------------------------------------------------------------------
+ANOTACIÓN @COMPONENTSCAN
+//Pasar todas las clases al contenedor
+@ComponentScan("com")
+ ---------------------------------------------------------------------------
+INTERFAZ WEBMVCCONFIGURER
+//Generar métodos o sobre escribir métodos para trabajar, ejemplo: 
+ALT+ INSERT
+public class SpringWeb implements WebMvcConfigurer{
+
+}
+---------------------------------------------------------------------------
+WEB XML ANOTACIONES
+
+getRootConfigClasses //Se pasa la configuración que se esta trabajando
+
+---------------------------------------------------------------------------
+QUE ES UN CONTROLADOR
+
+Una clase que va a respoder a todas las peticiones que vienen de una vista (JSP)
+Maneja cada una peteción http, response
+
+---------------------------------------------------------------------------
+ANOTACIÓN @CONTROLLER
+
+@Controller
+@Controller //Anunciar para que lo interprete como un controlador
+public class IndexController {
+}
+
+---------------------------------------------------------------------------
+ANOTACIÓN @REQUESTMAPPING
+
+@RequestMapping
+
+Crear una ruta para acceder a una vista
+@RequestMapping(value="/")
+
+---------------------------------------------------------------------------
+ANOTACIÓN @GETMAPPING Y @POSTMAPPING
+
+@GetMapping
+@PostMapping
+
+//Facilitar y reducir el código
+
+---------------------------------------------------------------------------
+ANOTACIÓN @RESPONSEBODY
+@Responsebody
+
+//public String IndexGET()
+//{
+//return "index";    -------------------> Retorna hacia una vista
+//}
+
+@ResponseBody
+
+responde el valor de tipo String Ejemplo "index"
+
+---------------------------------------------------------------------------
+ANOTACIÓN @PATHVARIABLE
+//Funcionalidad 
+@GetMapping("/buscar/{DesNom}/{ApePaterno}")
+
+public String buscarGET(@PathVariable String DesNom, @PathVariable String ApePaterno, required=false)
+
+---------------------------------------------------------------------------
+ENVIAR DATOS A LA VISTA CON MODELMAP
+ModelMap model  permite mapear variables en el html
+model.AddAtribute("nombre", nombre);
+
+---------------------------------------------------------------------------
+LA ANOTACIÓN @MODELATTRIBUTE
+
+@ModelAtribute("nombre")
+
+public String NombreData(){
+	return "Jose";
+}
+Permite enviar a todos los métodos del controlador
+
+---------------------------------------------------------------------------
+QUE ES MVC O EL MODELO VISTA CONTROLADOR
+
+PATRON DE DISEÑO PARA EL DESARROLLO DE SOFTWARE BÁSICAMENTE SE SEPARA EN TRES 
+CAPAS,  SE SEPARA EN TRES CAPAZ:
+
+MODELO: SE INCLUYEN TODOS LOS DATOS DONDE VAN HACER REFLEJADOS
+CONTROLADOR: VA CONTROLAR Y PEDIR LOS DATOS DEL MODELO
+VISTA: FORMULARIO O TECONOLOGÍA QUE SE DESARROLLA
+
+---------------------------------------------------------------------------
+COMO MANEJAR MVC EN SPRING

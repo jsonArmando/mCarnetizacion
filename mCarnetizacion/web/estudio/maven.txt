@@ -1,0 +1,63 @@
+COMANDOS CON MAVEN
+// mvn -version (Version de Maven)
+CREATE PROJECT MAVEN
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+//mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=holaMundo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+se crear el proyecto my-app (src-pom)
+
+//mvn package (Compilar el proyecto)
+Encontramos el compilado 
+Dentro tarjet Encontramos el compilado 
+Ejecutamos
+//java -cp target/holaMundo-1.0-SNAPSHOT.jar com.mycompany.app.App
+APLICACION WEB MAVEN 
+
+CREAMOS PROYECTO 
+REVISAR ARCHETYPE (WEBAPP)
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=web -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+INSTALAMOS LIRERÍAS PARA GENERAR EL PROJECT
+DENTRO DE LA CARPETA DEL PROJECT
+mvn install
+
+IDE AMBIENTE DE TRABAJO
+ECLIPSE IDE
+NETBEANS
+INTELLIJ IDEA
+
+QUE ES EDITOR DE TEXTO
+DIFERENCIAS PARA PODER TRABAJAR EN UN PROYECTO 
+
+CONFIGURAR ECLIPSE CON MAVEN
+SELECCIONAMOS ECLIPSE MARKETPLACE
+M2 CONNECT FOR MAVEN
+
+INSTALAR APACHE TOMCAT
+CREAR APLICACION WEB CON MAVEN Y ECLIPSE
+
+VENTAJAS DE ECLIPSE
+INSTALAR Y CONFIGURAR NETBEANS
+
+INTELLIJ IDEA
+
+SPRING FRAMEWORK
+TRABAJA SOBRE LA VERSION JAVA 8
+ACTUALIZACIÓN DEL CORE 
+PROGRAMACIÓN FUNCIONAL
+MODELO DE PROGRAMACIÓN
+MEJORAS WEB SOCKET
+JSON, UNIX, HTTP, ENTRE ONTROS
+
+CREAR UN PROJECT CON SPRING FRAMEWORK 
+
+mvn -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=webapp-javaee7 -DarchettypeVersion=1.1 -DgoudId=com.web -DartifactId=SpringWeb -Dversion=1.0 -Dpackage=com -Darchetype.interactive=false archetype:generate
+
+LIMPIAR PROJECTO
+
+mvn clean
+mvn install 
+
+
