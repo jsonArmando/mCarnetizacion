@@ -132,5 +132,42 @@ UN REGISTRO DE DATOS PARA ENVIAR HACIA EL SERVIDOR
 
 ---------------------------------------------------------------------------
 CREAR PROYECTO SPRINGWEBFORM
+---------------------------------------------------------------------------
+TEXTBOX
+
+REQUESTPARAM (OBTENER DATOS DE LA VISTA)
+
+---------------------------------------------------------------------------
+LABEL 
+PARA FORMULARIOS
+---------------------------------------------------------------------------
+DTO 
+public String SavePost(ModelMap Model, @ModelAtribute("DATOS")AlumnoDto AlumnoDTO){
+}
+---------------------------------------------------------------------------
+TEXTBOX TIPO DATE
+ADICION DE FECHA EN SPRING FRAMEWORK
+DateTimeFormat(pattern="yyyy-MM-dd")
+---------------------------------------------------------------------------
+TEXTBOX TIPO EMAIL
+type="email"
+---------------------------------------------------------------------------
+RADIOBUTTON
+---------------------------------------------------------------------------
+COMBOBOX
+---------------------------------------------------------------------------
+CHECKBOX
+
+
+
+
+
+
+
+
+
+
+
+
 
 
